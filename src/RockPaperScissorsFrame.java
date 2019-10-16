@@ -5,6 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RockPaperScissorsFrame extends JFrame {
+
+    //Score count
+    int playerWins = 0;
+    int computerWins = 0;
+    int ties = 0;
+
+    //Labels
     JLabel mainLabel = new JLabel("Rock Paper Scissors");
     JLabel playerWinsLabel = new JLabel("Player Wins: " + playerWins);
     JLabel computerWinsLabel = new JLabel("Computer Wins: " + computerWins);
