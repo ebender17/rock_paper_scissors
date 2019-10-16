@@ -44,10 +44,45 @@ public class RockPaperScissorsFrame extends JFrame {
     public RockPaperScissorsFrame(String title) {
         super(title);
 
+        UISetup();
+
         add(mainPanel);
-        setSize(700,500);
+        setSize(700, 500);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    private void UISetup() {
+        //set up layout of each panel & add border
+        mainPanel.setLayout(mainPanelLayout);
+        boardPanel.setLayout(boardPanelLayout);
+        boardPanel.setBorder(blackline);
+        statsPanel.setLayout(statsPanelLayout);
+
+
+        //add panels to main panel
+        mainPanel.add(mainLabel, BorderLayout.NORTH);
+        mainPanel.add(boardPanel, BorderLayout.CENTER);
+        mainPanel.add(statsPanel, BorderLayout.EAST);
+        mainPanel.add(resultsPanel, BorderLayout.SOUTH);
+
+        //add buttons to board panel
+        boardPanel.add(rockBtn);
+        boardPanel.add(paperBtn);
+        boardPanel.add(scissorsBtn);
+
+        //add actionListener to quit button
+        quitBtn.addActionListener((ActionEvent ae) -> System.exit(0));
+
+        //add labels to stats panel
+        statsPanel.add(playerWinsLabel);
+        statsPanel.add(computerWinsLabel);
+        statsPanel.add(tiesLabel);
+
+        //add scroll to results panel
+        resultsPanel.add(resultsScroll);
+
 
     }
    /* private void playGame() {
