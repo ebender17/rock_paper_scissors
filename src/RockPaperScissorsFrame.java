@@ -113,9 +113,77 @@ public class RockPaperScissorsFrame extends JFrame {
             resultsArea.append(calculateResults(playerPic) + "\n");
         });
 
-   /* private void calculateResults() {
 
-    } */
+    }
+
+
+    public String calculateResults(int playerPic) {
+        Random random = new Random();
+        int computerPic = random.nextInt(3) + 1;
+
+        String result = "";
+
+        switch (playerPic) {
+            case 1: {
+                if (computerPic == 1) {
+                    ties++;
+                    tiesField.setText(String.valueOf(ties));
+                    result = "It is a tie";
+
+                } else if (computerPic == 2) {
+                    computerWins++;
+                    computerWinsField.setText(String.valueOf(computerWins));
+                    result = "Paper covers Rock (Computer Wins)";
+                } else if (computerPic == 3) {
+                    playerWins++;
+                    playerWinsField.setText(String.valueOf(playerWins));
+                    result = "Rock breaks Scissors (Player Wins)";
+                }
+            }
+            break;
+            case 2: {
+                if (computerPic == 1) {
+                    playerWins++;
+                    playerWinsField.setText(String.valueOf(playerWins));
+                    result="Paper covers Rock (Player Wins)";
+
+                } else if (computerPic == 2) {
+                    ties++;
+                    tiesField.setText(String.valueOf(ties));
+                    result = "It is a tie";
+                } else if (computerPic == 3) {
+                    computerWins++;
+                    computerWinsField.setText(String.valueOf(computerWins));
+                    result = "Scissor cuts Paper (Computer Wins)";
+
+                }
+            }
+            break;
+            case 3: {
+                if (computerPic == 1) {
+                    computerWins++;
+                    computerWinsField.setText(String.valueOf(computerWins));
+                    result = "Rock beats Scissor (Computer Wins)";
+
+                } else if (computerPic == 2) {
+                    playerWins++;
+                    playerWinsField.setText(String.valueOf(playerWins));
+                    result = "Scissor cuts Paper (Player Wins)";
+                } else if (computerPic == 3) {
+                    ties++;
+                    tiesField.setText(String.valueOf(ties));
+                    result = "It is a tie";
+                }
+            }
+            break;
+
+
+
+
+        }
+        return result;
+    }
+
 
 
 }
