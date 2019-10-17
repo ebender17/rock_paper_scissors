@@ -12,6 +12,10 @@ public class RockPaperScissorsFrame extends JFrame {
     int computerWins = 0;
     int ties = 0;
 
+    //Fonts
+    Font mainLabelFont = new Font("Helvetica", Font.BOLD, 30);
+    Font resultsLabelFont = new Font("Helvetica", Font.PLAIN, 12);
+    Font statsFont = new Font("Helvetica", Font.BOLD, 18);
     //Labels
     JLabel mainLabel = new JLabel("Rock Paper Scissors");
     JLabel playerWinsLabel = new JLabel("Player Wins: ");
@@ -66,6 +70,15 @@ public class RockPaperScissorsFrame extends JFrame {
         boardPanel.setBorder(blackline);
         statsPanel.setLayout(statsPanelLayout);
 
+        //set fonts
+        mainLabel.setFont(mainLabelFont);
+        resultsArea.setFont(statsFont);
+        playerWinsLabel.setFont(resultsLabelFont);
+        computerWinsLabel.setFont(resultsLabelFont);
+        tiesLabel.setFont(resultsLabelFont);
+        playerWinsField.setFont(resultsLabelFont);
+        computerWinsField.setFont(resultsLabelFont);
+        tiesField.setFont(resultsLabelFont);
 
         //add panels to main panel
         mainPanel.add(mainLabel);
