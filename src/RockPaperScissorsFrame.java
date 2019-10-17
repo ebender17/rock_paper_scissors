@@ -67,10 +67,14 @@ public class RockPaperScissorsFrame extends JFrame {
         mainPanel.add(statsPanel, BorderLayout.EAST);
         mainPanel.add(resultsPanel, BorderLayout.SOUTH);
 
+        //button size
+        // rockBtn.setPreferredSize(new Dimension(75, 75));
+
         //add buttons to board panel
         boardPanel.add(rockBtn);
         boardPanel.add(paperBtn);
         boardPanel.add(scissorsBtn);
+        boardPanel.add(quitBtn);
 
         //add actionListener to quit button
         quitBtn.addActionListener((ActionEvent ae) -> System.exit(0));
@@ -90,6 +94,8 @@ public class RockPaperScissorsFrame extends JFrame {
         resultsPanel.add(resultsScroll);
 
         //play game
+        playGame();
+
 
     }
 
