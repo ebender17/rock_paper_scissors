@@ -19,9 +19,9 @@ public class RockPaperScissorsFrame extends JFrame {
     JLabel tiesLabel = new JLabel("Ties: ");
 
     //JTextFields
-    JTextField playerWinsField = new JTextField(2);
-    JTextField computerWinsField = new JTextField(2);
-    JTextField tiesField = new JTextField(2);
+    JTextField playerWinsField = new JTextField(1);
+    JTextField computerWinsField = new JTextField(1);
+    JTextField tiesField = new JTextField(1);
 
     //Panels
     JPanel mainPanel = new JPanel();
@@ -30,7 +30,7 @@ public class RockPaperScissorsFrame extends JFrame {
     JPanel resultsPanel = new JPanel();
 
     //Text area and scroll pane
-    JTextArea resultsArea = new JTextArea(1, 40);
+    JTextArea resultsArea = new JTextArea(3, 40);
     JScrollPane resultsScroll = new JScrollPane(resultsArea);
 
 
@@ -43,8 +43,8 @@ public class RockPaperScissorsFrame extends JFrame {
     //Border & Border Layout
     Border blackline = BorderFactory.createLineBorder(Color.DARK_GRAY);
     BoxLayout mainPanelLayout = new BoxLayout(mainPanel,BoxLayout.Y_AXIS);
-    GridLayout boardPanelLayout = new GridLayout(3, 3);
-    GridLayout statsPanelLayout = new GridLayout(3, 1);
+    BoxLayout boardPanelLayout = new BoxLayout(boardPanel, BoxLayout.X_AXIS);
+    GridLayout statsPanelLayout = new GridLayout(1, 3);
 
 
     public RockPaperScissorsFrame(String title) {
@@ -68,13 +68,13 @@ public class RockPaperScissorsFrame extends JFrame {
 
 
         //add panels to main panel
-        mainPanel.add(mainLabel, BorderLayout.NORTH);
-        mainPanel.add(boardPanel, BorderLayout.CENTER);
-        mainPanel.add(statsPanel, BorderLayout.EAST);
-        mainPanel.add(resultsPanel, BorderLayout.SOUTH);
+        mainPanel.add(mainLabel);
+        mainPanel.add(boardPanel);
+        mainPanel.add(statsPanel);
+        mainPanel.add(resultsPanel);
 
         //button size
-        // rockBtn.setPreferredSize(new Dimension(75, 75));
+        rockBtn.setPreferredSize(new Dimension(200, 75));
 
         //add buttons to board panel
         boardPanel.add(rockBtn);
@@ -122,7 +122,7 @@ public class RockPaperScissorsFrame extends JFrame {
         });
         scissorsBtn.addActionListener((ActionEvent ae)-> {
             int playerPic = 3;
-            resultsArea.append(calculateResults(playerPic) + "\n");
+            resultsArea.append(calculateResults(playerPic));
         });
 
 
@@ -140,16 +140,16 @@ public class RockPaperScissorsFrame extends JFrame {
                 if (computerPic == 1) {
                     ties++;
                     tiesField.setText(String.valueOf(ties));
-                    result = "It is a tie";
+                    result = "It is a tie \n";
 
                 } else if (computerPic == 2) {
                     computerWins++;
                     computerWinsField.setText(String.valueOf(computerWins));
-                    result = "Paper covers Rock (Computer Wins)";
+                    result = "Paper covers Rock (Computer Wins) \n";
                 } else if (computerPic == 3) {
                     playerWins++;
                     playerWinsField.setText(String.valueOf(playerWins));
-                    result = "Rock breaks Scissors (Player Wins)";
+                    result = "Rock breaks Scissors (Player Wins) \n";
                 }
             }
             break;
@@ -157,7 +157,7 @@ public class RockPaperScissorsFrame extends JFrame {
                 if (computerPic == 1) {
                     playerWins++;
                     playerWinsField.setText(String.valueOf(playerWins));
-                    result="Paper covers Rock (Player Wins)";
+                    result="Paper covers Rock (Player Wins) \n";
 
                 } else if (computerPic == 2) {
                     ties++;
@@ -166,7 +166,7 @@ public class RockPaperScissorsFrame extends JFrame {
                 } else if (computerPic == 3) {
                     computerWins++;
                     computerWinsField.setText(String.valueOf(computerWins));
-                    result = "Scissor cuts Paper (Computer Wins)";
+                    result = "Scissor cuts Paper (Computer Wins) \n";
 
                 }
             }
@@ -175,16 +175,16 @@ public class RockPaperScissorsFrame extends JFrame {
                 if (computerPic == 1) {
                     computerWins++;
                     computerWinsField.setText(String.valueOf(computerWins));
-                    result = "Rock beats Scissor (Computer Wins)";
+                    result = "Rock beats Scissor (Computer Wins) \n";
 
                 } else if (computerPic == 2) {
                     playerWins++;
                     playerWinsField.setText(String.valueOf(playerWins));
-                    result = "Scissor cuts Paper (Player Wins)";
+                    result = "Scissor cuts Paper (Player Wins) \n";
                 } else if (computerPic == 3) {
                     ties++;
                     tiesField.setText(String.valueOf(ties));
-                    result = "It is a tie";
+                    result = "It is a tie \n";
                 }
             }
             break;
