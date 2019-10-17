@@ -89,20 +89,29 @@ public class RockPaperScissorsFrame extends JFrame {
         //add scroll to results panel
         resultsPanel.add(resultsScroll);
 
+        //play game
 
     }
-   /* private void playGame() {
-        int playerPic;
-        int computerPic;
+
+
+
+
+   private void playGame() {
+
 
         rockBtn.addActionListener((ActionEvent ae) -> {
-            playerPic = 1; //rock
+            int playerPic = 1; //rock
+            resultsArea.append(calculateResults(playerPic));
         });
-        paperBtn.addActionListener();
-        scissorsBtn.addActionListener();
 
-        resultsArea.append(calculateResults());
-    }*/
+        paperBtn.addActionListener((ActionEvent ae) -> {
+            int playerPic = 2;
+            resultsArea.append(calculateResults(playerPic));
+        });
+        scissorsBtn.addActionListener((ActionEvent ae)-> {
+            int playerPic = 3;
+            resultsArea.append(calculateResults(playerPic) + "\n");
+        });
 
    /* private void calculateResults() {
 
