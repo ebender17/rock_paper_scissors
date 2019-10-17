@@ -3,6 +3,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class RockPaperScissorsFrame extends JFrame {
 
@@ -41,8 +42,8 @@ public class RockPaperScissorsFrame extends JFrame {
 
     //Border & Border Layout
     Border blackline = BorderFactory.createLineBorder(Color.DARK_GRAY);
-    BorderLayout mainPanelLayout = new BorderLayout();
-    GridLayout boardPanelLayout = new GridLayout(1, 3);
+    BoxLayout mainPanelLayout = new BoxLayout(mainPanel,BoxLayout.Y_AXIS);
+    GridLayout boardPanelLayout = new GridLayout(3, 3);
     GridLayout statsPanelLayout = new GridLayout(3, 1);
 
 
