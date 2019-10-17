@@ -75,10 +75,16 @@ public class RockPaperScissorsFrame extends JFrame {
         //add actionListener to quit button
         quitBtn.addActionListener((ActionEvent ae) -> System.exit(0));
 
-        //add labels to stats panel
+        //add labels & text fields to stats panel
         statsPanel.add(playerWinsLabel);
+        statsPanel.add(playerWinsField);
+        playerWinsField.setEditable(false);
         statsPanel.add(computerWinsLabel);
+        statsPanel.add(computerWinsField);
+        computerWinsField.setEditable(false);
         statsPanel.add(tiesLabel);
+        statsPanel.add(tiesField);
+        tiesField.setEditable(false);
 
         //add scroll to results panel
         resultsPanel.add(resultsScroll);
