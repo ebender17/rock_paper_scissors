@@ -14,8 +14,8 @@ public class RockPaperScissorsFrame extends JFrame {
 
     //Fonts
     Font mainLabelFont = new Font("Helvetica", Font.BOLD, 30);
-    Font resultsLabelFont = new Font("Helvetica", Font.PLAIN, 12);
-    Font statsFont = new Font("Helvetica", Font.BOLD, 18);
+    Font resultsFont = new Font("Helvetica", Font.PLAIN, 12);
+
     //Labels
     JLabel mainLabel = new JLabel("Rock Paper Scissors");
     JLabel playerWinsLabel = new JLabel("Player Wins: ");
@@ -72,13 +72,13 @@ public class RockPaperScissorsFrame extends JFrame {
 
         //set fonts
         mainLabel.setFont(mainLabelFont);
-        resultsArea.setFont(statsFont);
-        playerWinsLabel.setFont(resultsLabelFont);
-        computerWinsLabel.setFont(resultsLabelFont);
-        tiesLabel.setFont(resultsLabelFont);
-        playerWinsField.setFont(resultsLabelFont);
-        computerWinsField.setFont(resultsLabelFont);
-        tiesField.setFont(resultsLabelFont);
+        resultsArea.setFont(resultsFont);
+        playerWinsLabel.setFont(resultsFont);
+        computerWinsLabel.setFont(resultsFont);
+        tiesLabel.setFont(resultsFont);
+        playerWinsField.setFont(resultsFont);
+        computerWinsField.setFont(resultsFont);
+        tiesField.setFont(resultsFont);
 
         //add panels to main panel
         mainPanel.add(mainLabel);
@@ -175,7 +175,7 @@ public class RockPaperScissorsFrame extends JFrame {
                 } else if (computerPic == 2) {
                     ties++;
                     tiesField.setText(String.valueOf(ties));
-                    result = "It is a tie";
+                    result = "It is a tie \n";
                 } else if (computerPic == 3) {
                     computerWins++;
                     computerWinsField.setText(String.valueOf(computerWins));
