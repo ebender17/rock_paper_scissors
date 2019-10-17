@@ -13,9 +13,14 @@ public class RockPaperScissorsFrame extends JFrame {
 
     //Labels
     JLabel mainLabel = new JLabel("Rock Paper Scissors");
-    JLabel playerWinsLabel = new JLabel("Player Wins: " + playerWins);
-    JLabel computerWinsLabel = new JLabel("Computer Wins: " + computerWins);
-    JLabel tiesLabel = new JLabel("Ties: " + ties);
+    JLabel playerWinsLabel = new JLabel("Player Wins: ");
+    JLabel computerWinsLabel = new JLabel("Computer Wins: ");
+    JLabel tiesLabel = new JLabel("Ties: ");
+
+    //JTextFields
+    JTextField playerWinsField = new JTextField(2);
+    JTextField computerWinsField = new JTextField(2);
+    JTextField tiesField = new JTextField(2);
 
     //Panels
     JPanel mainPanel = new JPanel();
