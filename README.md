@@ -5,18 +5,19 @@
 
 
 #### Self Assessment
-- [ ] The program runs with no errors.
-- [ ] Create the GUI form.
-- [ ] Logic is sound.
-- [ ] Proper usage of Git and GitHub (frequent commits, explanatory commit messages)
+- [X] The program runs with no errors.
+- [X] Create the GUI form.
+- [X] Logic is sound.
+- [X] Proper usage of Git and GitHub (frequent commits, explanatory commit messages)
 - [ ] 3 Extra Credit
 - [ ] 6 Extra Credit
 
-**Your Grade:**  /20
+**Your Grade:**  20/20
 
 **Notes:**
 
 **How long did it take you to complete this assigment?**
+Three hours
 
 ______________________________________________________________________
 
