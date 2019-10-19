@@ -29,6 +29,7 @@ public class RockPaperScissorsFrame extends JFrame {
 
     //Panels
     JPanel mainPanel = new JPanel();
+    JPanel titlePanel = new JPanel();
     JPanel boardPanel = new JPanel();
     JPanel statsPanel = new JPanel();
     JPanel resultsPanel = new JPanel();
@@ -46,8 +47,9 @@ public class RockPaperScissorsFrame extends JFrame {
 
     //Border & Border Layout
     Border blackline = BorderFactory.createLineBorder(Color.DARK_GRAY);
-    BoxLayout mainPanelLayout = new BoxLayout(mainPanel,BoxLayout.Y_AXIS);
-    BoxLayout boardPanelLayout = new BoxLayout(boardPanel, BoxLayout.X_AXIS);
+    Border padding = BorderFactory.createEmptyBorder(8, 8, 8, 8);
+    BoxLayout mainPanelLayout = new BoxLayout(mainPanel, BoxLayout.Y_AXIS);
+    GridLayout boardPanelLayout = new GridLayout(1, 4);
     GridLayout statsPanelLayout = new GridLayout(1, 3);
 
 
@@ -64,11 +66,13 @@ public class RockPaperScissorsFrame extends JFrame {
     }
 
     private void UISetup() {
-        //set up layout of each panel & add border
+        //set up layout of each panel & add border and padding
         mainPanel.setLayout(mainPanelLayout);
+        titlePanel.setBorder(padding);
         boardPanel.setLayout(boardPanelLayout);
         boardPanel.setBorder(blackline);
         statsPanel.setLayout(statsPanelLayout);
+        statsPanel.setBorder(padding);
 
         //set fonts
         mainLabel.setFont(mainLabelFont);
@@ -81,13 +85,15 @@ public class RockPaperScissorsFrame extends JFrame {
         tiesField.setFont(resultsFont);
 
         //add panels to main panel
+        mainPanel.add(titlePanel);
         mainPanel.add(mainLabel);
         mainPanel.add(boardPanel);
         mainPanel.add(statsPanel);
         mainPanel.add(resultsPanel);
 
-        //button size
-        rockBtn.setPreferredSize(new Dimension(200, 75));
+        //add title
+        titlePanel.add(mainLabel);
+
 
         //add buttons to board panel
         boardPanel.add(rockBtn);
@@ -119,9 +125,7 @@ public class RockPaperScissorsFrame extends JFrame {
     }
 
 
-
-
-   private void playGame() {
+    private void playGame() {
 
 
         rockBtn.addActionListener((ActionEvent ae) -> {
@@ -133,7 +137,7 @@ public class RockPaperScissorsFrame extends JFrame {
             int playerPic = 2;
             resultsArea.append(calculateResults(playerPic));
         });
-        scissorsBtn.addActionListener((ActionEvent ae)-> {
+        scissorsBtn.addActionListener((ActionEvent ae) -> {
             int playerPic = 3;
             resultsArea.append(calculateResults(playerPic));
         });
@@ -170,7 +174,7 @@ public class RockPaperScissorsFrame extends JFrame {
                 if (computerPic == 1) {
                     playerWins++;
                     playerWinsField.setText(String.valueOf(playerWins));
-                    result="Paper covers Rock (Player Wins) \n";
+                    result = "Paper covers Rock (Player Wins) \n";
 
                 } else if (computerPic == 2) {
                     ties++;
@@ -203,12 +207,9 @@ public class RockPaperScissorsFrame extends JFrame {
             break;
 
 
-
-
         }
         return result;
     }
-
 
 
 }
