@@ -13,11 +13,6 @@ Assignment completed for Computer Programming II.
 
 **Your Grade:**  20/20
 
-**Notes:**
-
-**How long did it take you to complete this assigment?**
-Three hours
-
 ______________________________________________________________________
 
 ## Lab Goals:
@@ -73,5 +68,3 @@ layout.
 2. Created a GUI application.
 3. Logic is sound.
 4. Proper usage of Git and GitHub (frequent commits, explanatory commit messages)
-5. 3 Extra Credit
-6. 6 Extra Credit
