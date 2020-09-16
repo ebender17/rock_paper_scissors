@@ -2,15 +2,14 @@
 ## Assignment Self Assessment:
 #### Reflection
 [//]: <> (share your thoughts on the assignment, things you learnt and would like to remember when you look back at this assignment)
-
+Assignment completed for Computer Programming II. 
 
 #### Self Assessment
 - [X] The program runs with no errors.
 - [X] Create the GUI form.
 - [X] Logic is sound.
 - [X] Proper usage of Git and GitHub (frequent commits, explanatory commit messages)
-- [ ] 3 Extra Credit
-- [ ] 6 Extra Credit
+
 
 **Your Grade:**  20/20
 
@@ -65,17 +64,6 @@ JFrame) and a java main class: RockPaperScissorsRunner.java.
 3. The player will click on one of the buttons to play the game. The computer will randomly determine which symbol it will use and then determine the results. The JTextArea will be updated with the results display string. One line for each game. The stats panel keeping track of the computer and player wins and the ties should also be updated and should show a running total for all the games played during the session.
 
 4. The game continues until the player closes the application window or presses the Quit key.
-
-5. **3 Extra credit**: You will develop several different algorithmic schemes/strategies for choosing the computers move and then set the computer to randomly use your schemes.
-    * **Least Used:** Keep track of the number of times that player uses each of the 3 symbols. Develop an algorithm scheme for the computer to pick the symbol that will win against the symbol used the least by the player. (The assumption here is that the player will be most likely to use that symbol that they have not used recently.)
-    * **Most Used:** As in the previous approach keep track of the player choices but this time assume that the player will tend to pick the symbol that they use the most so the computer will pick the symbol that will beat it.
-    * **Last Used:** Use the symbol that the player used on the last round. (Be careful not to call this on the first round of play.) This approach is actually the solution to a famous problem in computer science known as the prisoner’s dilemma.
-    * **Random:** Randomize the computers choice as in the normal game described previously.
-    * **Cheat:** no more than 10% of the time, have the computer cheat and pick the winning symbol based on the choice the player already made.
-
-    Add the strategy used each time to the display in the JTextArea e.g. : “Rock breaks scissors. (Player wins Least Used)” A bit of analysis here shows that this is essentially just a different method to determine the result for each game. One rather clever way to do this would be to use an interface.
-
-6. **4 Extra credit**, if you reasonably do this using an interface! (Consider an Interface called Strategy with an abstract method called determineMove().)
 
 Thoroughly test your game making sure that everything works correctly. Try for a nice looking
 layout.
